@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>dadiRohan | CMS</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -53,14 +53,14 @@
             }
         </style>
     </head>
-    <body class="antialiased">
+    <body class="antialiased" style="font-size:40px;">
         
         <div class="list"></div>
         <!-- <div id="About">HELLO ROHAN</div>
         <div id="Services" style="margin-top:500px;">HELLO Dadi</div> -->
 
-        <span class="content">
-            Welcome To Content Section
+        <span class="content" height="400">
+            Welcome To CMS
         </span>
 
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
@@ -89,33 +89,34 @@
                     url:"{{url('api/menu/list')}}",
                     method:"GET",
                     success:function(response){
-                        //console.log(response)
                         var list = '<ul class="mymenu" id="mymenu">'; 
                         response.data.map(function(menu){
-                            //console.log(menu.name)    
-                            list+='<li class="item"><a href="#'+menu.id+'" data-item='+menu.id+' ">'+menu.name+'</a></li>';
+                            // list+='<li class="item"><a href="#'+menu.id+'" data-item='+menu.id+' ">'+menu.name+'</a></li>'; //HREF ID
+                            list+='<li class="item"><a href="'+menu.name+'" data-item='+menu.id+' ">'+menu.name+'</a></li>'; //HREF NAME
                         });
                         list+='</ul>'
                         $('.list').html(list);
                     }
                 });
 
-                //2nd AJAX for Page details
-                $.ajax({
-                    url: "{{url('api/page/list')}}",
-                    method:"GET",
-                    success:function(res){
-                        console.log(res)
-                        var content = '';
-                        res.map(function(page){
-                            content+='<div id="'+page.menu_id+'" style="padding:50px 0 500px 0;">';
-                            content+=page.content;
-                            content+='</div>';
-                        });
-                        console.log(content);
-                        $('.content').html(content);
-                    }
-                });
+                //For AJAX for Page details with HREF ID
+                // $.ajax({
+                //     url: "{{url('api/page/list')}}",
+                //     method:"GET",
+                //     success:function(res){
+                //         console.log(res)
+                //         var content = '';
+                //         res.map(function(page){
+                //             content+='<div id="'+page.menu_id+'" style="padding:50px 0 500px 0;">';
+                //             content+=page.content;
+                //             content+='</div>';
+                //         });
+                //         console.log(content);
+                //         $('.content').html(content);
+                //     }
+                // });
+
+                //For AJAX for Page details with HREF Name
 
                 $('ul.mymenu').on('click','li',function()
                 {

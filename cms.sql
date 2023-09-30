@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2023 at 12:28 PM
+-- Generation Time: Sep 30, 2023 at 12:56 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -111,10 +111,10 @@ CREATE TABLE `pages` (
 
 INSERT INTO `pages` (`id`, `menu_id`, `sub_menu_id`, `name`, `slug`, `content`, `created_at`, `updated_at`) VALUES
 (1, 1, 0, 'Home', 'home', 'Welcome To Home Page', NULL, NULL),
-(2, 2, 1, 'About 1', 'About1', 'This is About 1', NULL, NULL),
-(3, 3, 0, 'Product', 'product', 'This is Product', NULL, NULL),
-(4, 4, 0, 'Service', 'service', 'This is Service', NULL, NULL),
-(5, 5, 0, 'contact', 'contact', 'This is Contact Form', NULL, NULL);
+(2, 2, 1, 'About', 'About', 'This is About', NULL, NULL),
+(3, 3, 0, 'Products', 'Product', 'This is Product', NULL, NULL),
+(4, 4, 0, 'Services', 'Service', 'This is Service', NULL, NULL),
+(5, 5, 0, 'Contact', 'Contact', 'This is Contact Form', NULL, NULL);
 
 -- --------------------------------------------------------
 

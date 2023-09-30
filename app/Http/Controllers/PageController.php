@@ -46,9 +46,11 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $page =  Page::where('name',$slug)->first();
+        // dd($page);
+        return view('page',compact('page'));
     }
 
     /**

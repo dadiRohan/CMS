@@ -1,0 +1,4 @@
+
+@include('welcome')
+
+{{ $page->content }}
